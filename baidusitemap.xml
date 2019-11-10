@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://hpoenixf.com/posts/63808/</loc>
+    <lastmod>2019-11-10T09:40:38.048Z</lastmod>
+    <data>
+        <display>
+        <title>如何写漂亮的代码</title>
+        <pubTime>2019-11-10T09:21:39.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hpoenixf.com/posts/64805/</loc>
     <lastmod>2018-12-24T15:26:07.519Z</lastmod>
     <data>
@@ -246,12 +261,57 @@
 
     
   <url>
+    <loc>http://hpoenixf.com/posts/24239/</loc>
+    <lastmod>2018-04-17T00:35:44.680Z</lastmod>
+    <data>
+        <display>
+        <title>我的前端成长回顾</title>
+        <pubTime>2018-03-12T14:32:53.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hpoenixf.com/posts/17726/</loc>
     <lastmod>2018-04-17T00:35:44.680Z</lastmod>
     <data>
         <display>
         <title>移动端自适应布局方案</title>
         <pubTime>2017-09-27T14:20:11.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hpoenixf.com/posts/8342/</loc>
+    <lastmod>2018-04-17T00:35:44.680Z</lastmod>
+    <data>
+        <display>
+        <title>[译]如何运用最新的技术提升网页速度和性能</title>
+        <pubTime>2016-08-15T07:21:42.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hpoenixf.com/posts/28359/</loc>
+    <lastmod>2018-04-17T00:35:44.680Z</lastmod>
+    <data>
+        <display>
+        <title>用RxJS和react开发mac地址输入框</title>
+        <pubTime>2017-06-18T15:33:54.000Z</pubTime>
         
          
            
@@ -279,57 +339,27 @@
 
     
   <url>
-    <loc>http://hpoenixf.com/posts/28359/</loc>
-    <lastmod>2018-04-17T00:35:44.680Z</lastmod>
-    <data>
-        <display>
-        <title>用RxJS和react开发mac地址输入框</title>
-        <pubTime>2017-06-18T15:33:54.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hpoenixf.com/posts/24239/</loc>
-    <lastmod>2018-04-17T00:35:44.680Z</lastmod>
-    <data>
-        <display>
-        <title>我的前端成长回顾</title>
-        <pubTime>2018-03-12T14:32:53.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hpoenixf.com/posts/8342/</loc>
-    <lastmod>2018-04-17T00:35:44.680Z</lastmod>
-    <data>
-        <display>
-        <title>[译]如何运用最新的技术提升网页速度和性能</title>
-        <pubTime>2016-08-15T07:21:42.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hpoenixf.com/posts/60659/</loc>
+    <loc>http://hpoenixf.com/posts/2967/</loc>
     <lastmod>2018-04-17T00:35:44.670Z</lastmod>
     <data>
         <display>
-        <title>我是怎么成为前端工程师的</title>
-        <pubTime>2018-03-18T16:08:06.000Z</pubTime>
+        <title>前端错误监控与收集探究</title>
+        <pubTime>2018-04-04T01:48:14.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hpoenixf.com/posts/21589/</loc>
+    <lastmod>2018-04-17T00:35:44.670Z</lastmod>
+    <data>
+        <display>
+        <title>加快webpack构建</title>
+        <pubTime>2017-12-10T12:40:59.000Z</pubTime>
         
          
            
@@ -345,21 +375,6 @@
         <display>
         <title>大厂前端面试考什么?</title>
         <pubTime>2018-03-25T01:36:35.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hpoenixf.com/posts/2967/</loc>
-    <lastmod>2018-04-17T00:35:44.670Z</lastmod>
-    <data>
-        <display>
-        <title>前端错误监控与收集探究</title>
-        <pubTime>2018-04-04T01:48:14.000Z</pubTime>
         
          
            
@@ -399,72 +414,12 @@
 
     
   <url>
-    <loc>http://hpoenixf.com/posts/21589/</loc>
+    <loc>http://hpoenixf.com/posts/60659/</loc>
     <lastmod>2018-04-17T00:35:44.670Z</lastmod>
     <data>
         <display>
-        <title>加快webpack构建</title>
-        <pubTime>2017-12-10T12:40:59.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hpoenixf.com/posts/8215/</loc>
-    <lastmod>2018-04-17T00:35:44.660Z</lastmod>
-    <data>
-        <display>
-        <title>一个简单的virtual-dom实现</title>
-        <pubTime>2018-01-01T15:43:41.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hpoenixf.com/posts/22565/</loc>
-    <lastmod>2018-04-17T00:35:44.660Z</lastmod>
-    <data>
-        <display>
-        <title>代码整洁之道读书笔记</title>
-        <pubTime>2017-06-03T16:16:28.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hpoenixf.com/posts/48560/</loc>
-    <lastmod>2018-04-17T00:35:44.660Z</lastmod>
-    <data>
-        <display>
-        <title>代码大全读书笔记（第一部分）</title>
-        <pubTime>2017-06-25T07:53:39.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hpoenixf.com/posts/14971/</loc>
-    <lastmod>2018-04-17T00:35:44.660Z</lastmod>
-    <data>
-        <display>
-        <title>代码大全读书笔记（第二部分）</title>
-        <pubTime>2017-07-02T17:01:27.000Z</pubTime>
+        <title>我是怎么成为前端工程师的</title>
+        <pubTime>2018-03-18T16:08:06.000Z</pubTime>
         
          
            
@@ -489,12 +444,72 @@
 
     
   <url>
+    <loc>http://hpoenixf.com/posts/14971/</loc>
+    <lastmod>2018-04-17T00:35:44.660Z</lastmod>
+    <data>
+        <display>
+        <title>代码大全读书笔记（第二部分）</title>
+        <pubTime>2017-07-02T17:01:27.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hpoenixf.com/posts/48560/</loc>
+    <lastmod>2018-04-17T00:35:44.660Z</lastmod>
+    <data>
+        <display>
+        <title>代码大全读书笔记（第一部分）</title>
+        <pubTime>2017-06-25T07:53:39.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hpoenixf.com/posts/13626/</loc>
     <lastmod>2018-04-17T00:35:44.660Z</lastmod>
     <data>
         <display>
         <title>使用原生JS进行前后端同构</title>
         <pubTime>2018-02-27T18:09:25.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hpoenixf.com/posts/22565/</loc>
+    <lastmod>2018-04-17T00:35:44.660Z</lastmod>
+    <data>
+        <display>
+        <title>代码整洁之道读书笔记</title>
+        <pubTime>2017-06-03T16:16:28.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hpoenixf.com/posts/8215/</loc>
+    <lastmod>2018-04-17T00:35:44.660Z</lastmod>
+    <data>
+        <display>
+        <title>一个简单的virtual-dom实现</title>
+        <pubTime>2018-01-01T15:43:41.000Z</pubTime>
         
          
            
