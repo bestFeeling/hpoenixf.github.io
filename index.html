@@ -299,6 +299,193 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hpoenixf.com/posts/11023/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hpoenixf">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hpoenixf's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/11023/" itemprop="url">从负一步开始的性能优化</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-28T00:08:06+08:00">2020-04-28</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/posts/11023/" class="leancloud_visitors" data-flag-title="从负一步开始的性能优化">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+      
+        <span class="post-letters-count">
+          &nbsp; | &nbsp;
+          <span>590 words </span>
+        </span>
+      
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>两年前，我曾经写了一篇<a href="https://hpoenixf.com/posts/14981/">关于性能优化的文章</a>, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。</p>
+<p>关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。</p>
+<p>因此，我们可以将性能优化按时间顺序分为三块<br>用户访问网站前，页面加载完成前，页面运行中</p>
+<h4 id="用户访问网站前的性能优化"><a href="#用户访问网站前的性能优化" class="headerlink" title="用户访问网站前的性能优化"></a>用户访问网站前的性能优化</h4><ul>
+<li>预先将页面资源如JS,图片，多媒体文件推送到客户端/浏览器</li>
+<li>预加载：prefetch（可能使用的资源）、preload（必要资源）、prerender</li>
+<li>提前打开webview容器：打开webview容器需要一些时间，我们可以提前打开webview来省去这些时间</li>
+<li>提前获取下个跳转页面需要的ajax数据</li>
+</ul>
+<h4 id="输入url后"><a href="#输入url后" class="headerlink" title="输入url后"></a>输入url后</h4><ul>
+<li>查询强缓存：启用service worker及强缓存</li>
+<li>解析dns：http dns，dns-prefetch</li>
+<li>建立tcp链接：http2，keep alive，域名收敛，请求合并，雪碧图，打包代码</li>
+<li>发送请求；disk cache协商缓存，小图片使用base64免去请求。</li>
+<li>服务器处理请求：少一些重定向，使用hsts强制https</li>
+<li>发送响应： 压缩资源，用更好的格式，使用type=mod+<br>-<br>ule传输es6版本的代码</li>
+<li>解析html：js在下，defer async</li>
+<li>构建渲染树：<ul>
+<li>减少重绘重排: 减少dom操作,减少读取几何布局属性，class代替sttyle，resize，scroll时节流防抖。</li>
+<li>懒加载</li>
+<li>css优化：减少选择器</li>
+</ul>
+</li>
+<li>获取渲染需要的接口：localstorage缓存相关数据</li>
+<li>白屏：骨架屏，服务器渲染</li>
+<li>首屏内容：placeholder,关键css和dom</li>
+<li>页面可交互</li>
+<li>加载完成</li>
+</ul>
+<h4 id="页面加载完成后"><a href="#页面加载完成后" class="headerlink" title="页面加载完成后"></a>页面加载完成后</h4><p>使用raf记录fps可以记录帧率</p>
+<ul>
+<li>构建合成层启用加速：will change，transfrom:translateZ,position:fixed</li>
+<li>减少重绘重排</li>
+<li>虚拟滚动条应对无限加载</li>
+<li>节流防抖</li>
+<li>虚拟DOM</li>
+<li>用raf来做动画</li>
+<li><p>对性能较差的机型降级：</p>
+<ul>
+<li><p>使用canvas嗅探GPU型号：let gl = canvas.getContext(‘experimental-webgl’);let info= gl.getExtension(‘WEBGL_debug_renderer_info’); gl.getParameter(info.UNMASKED_RENDERER_WEBGL)</p>
+</li>
+<li><p>Native API手机机型识别</p>
+</li>
+<li>UA 获取系统版本</li>
+<li>分辨率</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hpoenixf.com/posts/29816/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1332,157 +1519,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hpoenixf.com/posts/9563/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="hpoenixf">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hpoenixf's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/9563/" itemprop="url">redux-saga初探</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-26T18:07:08+08:00">2018-05-26</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/posts/9563/" class="leancloud_visitors" data-flag-title="redux-saga初探">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Views&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-      
-        <span class="post-letters-count">
-          &nbsp; | &nbsp;
-          <span>968 words </span>
-        </span>
-      
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>最近需要使用react技术栈，需要掌握react，redux和redux-saga，然而我只是简单的写过react。刷了几遍文档还是一头雾水，决定写过小demo练手加深下印象。</p>
-<p>就不详细介绍上面的技术了，简单来说redux就是管理状态的，但是对于异步的处理不是很完善，这里就需要用到redux-saga了。redux-saga的异步处理用到了生成器和迭代器的相关知识，不熟悉的同学可以了解下<a href="http://hpoenixf.com/posts/18922/">我之前的文章</a></p>
-<p>这次的demo打算写一个输入框，输入拼音会返回对应的城市列表。并尽可能多的使用redux-saga的特性<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/9563/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1532,7 +1573,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
