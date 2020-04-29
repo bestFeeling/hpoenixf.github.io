@@ -103,7 +103,7 @@
 <meta property="og:url" content="http://hpoenixf.com/posts/11026/index.html">
 <meta property="og:site_name" content="hpoenixf&#39;s blog">
 <meta property="og:description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块：用户访问网站前，页面加载完成前，页面运行中">
-<meta property="og:updated_time" content="2020-04-29T16:02:34.328Z">
+<meta property="og:updated_time" content="2020-04-29T17:00:13.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从负一步开始的性能优化">
 <meta name="twitter:description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块：用户访问网站前，页面加载完成前，页面运行中">
@@ -378,7 +378,7 @@
       
         <span class="post-letters-count">
           &nbsp; | &nbsp;
-          <span>592 words </span>
+          <span>591 words </span>
         </span>
       
         </div>
@@ -431,12 +431,9 @@
 <li>节流防抖</li>
 <li>虚拟DOM</li>
 <li>用raf来做动画</li>
-<li><p>对性能较差的机型降级：</p>
-<ul>
-<li><p>使用canvas嗅探GPU型号：let gl = canvas.getContext(‘experimental-webgl’);let info= gl.getExtension(‘WEBGL_debug_renderer_info’); gl.getParameter(info.UNMASKED_RENDERER_WEBGL)</p>
-</li>
-<li><p>Native API手机机型识别</p>
-</li>
+<li>对性能较差的机型降级：(怎么判断？)<ul>
+<li>使用canvas嗅探GPU型号：关键词包括experimental-webgl、WEBGL_debug_renderer_info、info.UNMASKED_RENDERER_WEBGL</li>
+<li>Native API手机机型识别</li>
 <li>UA 获取系统版本</li>
 <li>分辨率</li>
 </ul>
