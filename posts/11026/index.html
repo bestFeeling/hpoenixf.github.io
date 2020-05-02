@@ -97,16 +97,16 @@
 
 
 
-  <meta name="description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块：用户访问网站前，页面加载完成前，页面运行中">
+  <meta name="description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块： 页面访问前，页面加载中，页面运行时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从负一步开始的性能优化">
 <meta property="og:url" content="http://hpoenixf.com/posts/11026/index.html">
 <meta property="og:site_name" content="hpoenixf&#39;s blog">
-<meta property="og:description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块：用户访问网站前，页面加载完成前，页面运行中">
-<meta property="og:updated_time" content="2020-04-29T17:00:13.686Z">
+<meta property="og:description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块： 页面访问前，页面加载中，页面运行时">
+<meta property="og:updated_time" content="2020-05-02T03:27:32.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从负一步开始的性能优化">
-<meta name="twitter:description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块：用户访问网站前，页面加载完成前，页面运行中">
+<meta name="twitter:description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块： 页面访问前，页面加载中，页面运行时">
 
 
 
@@ -378,7 +378,7 @@
       
         <span class="post-letters-count">
           &nbsp; | &nbsp;
-          <span>591 words </span>
+          <span>798 words </span>
         </span>
       
         </div>
@@ -396,41 +396,142 @@
       
         <p>两年前，我曾经写了一篇<a href="https://hpoenixf.com/posts/14981/">关于性能优化的文章</a>, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。</p>
 <p>关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。</p>
-<p>因此，我们可以将性能优化按时间顺序分为三块：<br>用户访问网站前，页面加载完成前，页面运行中<br><a id="more"></a></p>
+<p>因此，我们可以将性能优化按时间顺序分为三块：</p>
+<p>页面访问前，页面加载中，页面运行时</p>
+<a id="more"></a>
 <h4 id="用户访问网站前的性能优化"><a href="#用户访问网站前的性能优化" class="headerlink" title="用户访问网站前的性能优化"></a>用户访问网站前的性能优化</h4><ul>
+<li><p>推送资源：</p>
+<ul>
 <li>预先将页面资源如JS,图片，多媒体文件推送到客户端/浏览器</li>
-<li>预加载：prefetch（可能使用的资源）、preload（必要资源）、prerender</li>
-<li>提前打开webview容器：打开webview容器需要一些时间，我们可以提前打开webview来省去这些时间</li>
-<li>提前获取下个跳转页面需要的ajax数据</li>
 </ul>
-<h4 id="输入url后"><a href="#输入url后" class="headerlink" title="输入url后"></a>输入url后</h4><ul>
-<li>查询强缓存：启用service worker及强缓存</li>
-<li>解析dns：http dns，dns-prefetch，使用CDN</li>
-<li>建立tcp链接：http2，keep alive，域名收敛，请求合并，雪碧图，打包代码</li>
-<li>发送请求；disk cache协商缓存，小图片使用base64免去请求。</li>
-<li>服务器处理请求：少一些重定向，使用hsts强制https</li>
-<li>发送响应： 压缩资源，用更好的格式，使用type=module传输es6版本的代码</li>
-<li>解析html：js在下，defer async</li>
+</li>
+<li><p>预加载：</p>
+<ul>
+<li>prefetch（可能使用的资源）</li>
+<li>preload（必要资源）</li>
+<li>prerender</li>
+</ul>
+</li>
+<li><p>提前打开webview容器：</p>
+<ul>
+<li>打开webview容器需要一些时间，我们可以提前打开webview来省去这些时间</li>
+</ul>
+</li>
+<li><p>预先请求AJAX: </p>
+<ul>
+<li>提前获取下个跳转页面需要的ajax数据,缓存到localstorage</li>
+</ul>
+</li>
+</ul>
+<h4 id="页面加载过程中的性能优化"><a href="#页面加载过程中的性能优化" class="headerlink" title="页面加载过程中的性能优化"></a>页面加载过程中的性能优化</h4><ul>
+<li><p>查询强缓存：</p>
+<ul>
+<li>service worker</li>
+<li>强缓存</li>
+</ul>
+</li>
+<li><p>解析dns：</p>
+<ul>
+<li>域名收敛</li>
+<li>http dns</li>
+<li>dns-prefetch: <code>&lt;link rel=&quot;dns-prefetch&quot; href=&quot;/domain.com&#39;&gt;</code></li>
+<li>使用CDN，将图片等资源的dns配置指向cdn，加速下载，抹平运营商差异</li>
+</ul>
+</li>
+<li><p>建立tcp链接：</p>
+<ul>
+<li>http2: 多路复用</li>
+<li>keep alive： 长连接</li>
+<li>域名发散： 突破并发请求限制</li>
+<li>雪碧图</li>
+<li>打包代码</li>
+</ul>
+</li>
+<li><p>发送请求；</p>
+<ul>
+<li>disk cache协商缓存</li>
+<li>小图片使用base64免去请求。</li>
+</ul>
+</li>
+<li><p>服务器处理请求：</p>
+<ul>
+<li>少一些重定向， 301永久，302临时</li>
+<li>使用hsts强制https，307</li>
+</ul>
+</li>
+<li><p>发送响应： </p>
+<ul>
+<li>gzip压缩资源</li>
+<li>用更好的格式如webp</li>
+<li>使用<code>&lt;script type=module&gt;</code>传输es6版本的代码, <code>&lt;script nomodule&gt;</code>传输es5代码</li>
+</ul>
+</li>
+<li><p>解析html：</p>
+<ul>
+<li>js在下避免阻塞，</li>
+<li>defer有序，文档解析完成后才执行。 async加载后立刻执行，乱序</li>
+</ul>
+</li>
 <li>构建渲染树：<ul>
+<li>减少DOM的数量和嵌套层级</li>
 <li>减少重绘重排: 减少dom操作,减少读取几何布局属性，class代替sttyle，resize，scroll时节流防抖。</li>
 <li>懒加载</li>
 <li>css优化：减少选择器</li>
 </ul>
 </li>
-<li>获取渲染需要的接口：localstorage缓存相关数据</li>
-<li>白屏：骨架屏，服务器渲染</li>
-<li>首屏内容：placeholder,关键css和dom</li>
-<li>页面可交互</li>
-<li>加载完成</li>
-</ul>
-<h4 id="页面加载完成后"><a href="#页面加载完成后" class="headerlink" title="页面加载完成后"></a>页面加载完成后</h4><p>使用raf记录fps可以记录帧率</p>
+<li><p>白屏：</p>
 <ul>
-<li>构建合成层启用加速：will change，transfrom:translateZ,position:fixed</li>
-<li>减少重绘重排</li>
+<li>骨架屏</li>
+<li>服务器渲染</li>
+</ul>
+</li>
+<li>运行JS:<ul>
+<li>依赖版本统一</li>
+<li>精简代码</li>
+<li>tree shaking</li>
+<li>代码分割</li>
+</ul>
+</li>
+<li><p>获取渲染需要的接口：</p>
+<ul>
+<li>localstorage缓存时效性不强的数据</li>
+</ul>
+</li>
+<li><p>首屏内容：</p>
+<ul>
+<li>placeholder</li>
+<li>关键css和dom</li>
+</ul>
+</li>
+<li>页面可交互 DOMContentloaded</li>
+<li>加载完成 load</li>
+</ul>
+<h4 id="页面运行时的性能优化"><a href="#页面运行时的性能优化" class="headerlink" title="页面运行时的性能优化"></a>页面运行时的性能优化</h4><p>使用raf记录fps可以记录帧率</p>
+<ul>
+<li>构建合成层启用GPU加速：<ul>
+<li>will change： opacity、transform、top left bottom right</li>
+<li>transfrom:translateZ</li>
+<li>position:fixed</li>
+<li>zIndex</li>
+</ul>
+</li>
+<li>减少重绘重排<ul>
+<li>避免频繁操作样式和DOM</li>
+<li>避免读取offsettop，scrolltop,clienttop等属性</li>
+<li>class代替style</li>
+<li>批量修改的元素、复杂动画脱离文档流</li>
+</ul>
+</li>
 <li>虚拟滚动条应对无限加载</li>
 <li>节流防抖</li>
 <li>虚拟DOM</li>
 <li>用raf来做动画</li>
+<li>滚动优化<ul>
+<li>节点回收</li>
+<li>占位</li>
+<li>事件节流，事件代理</li>
+</ul>
+</li>
 <li>对性能较差的机型降级：(怎么判断？)<ul>
 <li>使用canvas嗅探GPU型号：关键词包括experimental-webgl、WEBGL_debug_renderer_info、info.UNMASKED_RENDERER_WEBGL</li>
 <li>Native API手机机型识别</li>
@@ -678,7 +779,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户访问网站前的性能优化"><span class="nav-number">1.</span> <span class="nav-text">用户访问网站前的性能优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入url后"><span class="nav-number">2.</span> <span class="nav-text">输入url后</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面加载完成后"><span class="nav-number">3.</span> <span class="nav-text">页面加载完成后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户访问网站前的性能优化"><span class="nav-number">1.</span> <span class="nav-text">用户访问网站前的性能优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面加载过程中的性能优化"><span class="nav-number">2.</span> <span class="nav-text">页面加载过程中的性能优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面运行时的性能优化"><span class="nav-number">3.</span> <span class="nav-text">页面运行时的性能优化</span></a></li></ol></div>
             
 
           </div>
