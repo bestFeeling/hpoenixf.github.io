@@ -103,7 +103,7 @@
 <meta property="og:url" content="http://hpoenixf.com/posts/11026/index.html">
 <meta property="og:site_name" content="hpoenixf&#39;s blog">
 <meta property="og:description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块： 页面访问前，页面加载中，页面运行时">
-<meta property="og:updated_time" content="2020-05-02T03:27:32.086Z">
+<meta property="og:updated_time" content="2020-05-02T03:34:39.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从负一步开始的性能优化">
 <meta name="twitter:description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化，两年过去了，我又有了一点新的思考，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块： 页面访问前，页面加载中，页面运行时">
@@ -400,32 +400,27 @@
 <p>页面访问前，页面加载中，页面运行时</p>
 <a id="more"></a>
 <h4 id="用户访问网站前的性能优化"><a href="#用户访问网站前的性能优化" class="headerlink" title="用户访问网站前的性能优化"></a>用户访问网站前的性能优化</h4><ul>
-<li><p>推送资源：</p>
-<ul>
+<li>推送资源：<ul>
 <li>预先将页面资源如JS,图片，多媒体文件推送到客户端/浏览器</li>
 </ul>
 </li>
-<li><p>预加载：</p>
-<ul>
+<li>预加载：<ul>
 <li>prefetch（可能使用的资源）</li>
 <li>preload（必要资源）</li>
 <li>prerender</li>
 </ul>
 </li>
-<li><p>提前打开webview容器：</p>
-<ul>
+<li>提前打开webview容器：<ul>
 <li>打开webview容器需要一些时间，我们可以提前打开webview来省去这些时间</li>
 </ul>
 </li>
-<li><p>预先请求AJAX: </p>
-<ul>
+<li>预先请求AJAX: <ul>
 <li>提前获取下个跳转页面需要的ajax数据,缓存到localstorage</li>
 </ul>
 </li>
 </ul>
 <h4 id="页面加载过程中的性能优化"><a href="#页面加载过程中的性能优化" class="headerlink" title="页面加载过程中的性能优化"></a>页面加载过程中的性能优化</h4><ul>
-<li><p>查询强缓存：</p>
-<ul>
+<li>查询强缓存：<ul>
 <li>service worker</li>
 <li>强缓存</li>
 </ul>
@@ -472,7 +467,8 @@
 <li>defer有序，文档解析完成后才执行。 async加载后立刻执行，乱序</li>
 </ul>
 </li>
-<li>构建渲染树：<ul>
+<li><p>构建渲染树：</p>
+<ul>
 <li>减少DOM的数量和嵌套层级</li>
 <li>减少重绘重排: 减少dom操作,减少读取几何布局属性，class代替sttyle，resize，scroll时节流防抖。</li>
 <li>懒加载</li>
@@ -485,7 +481,8 @@
 <li>服务器渲染</li>
 </ul>
 </li>
-<li>运行JS:<ul>
+<li><p>运行JS:</p>
+<ul>
 <li>依赖版本统一</li>
 <li>精简代码</li>
 <li>tree shaking</li>
