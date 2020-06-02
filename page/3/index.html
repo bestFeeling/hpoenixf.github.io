@@ -1411,7 +1411,7 @@
       
         <span class="post-letters-count">
           &nbsp; | &nbsp;
-          <span>2,937 words </span>
+          <span>3,150 words </span>
         </span>
       
         </div>
@@ -1428,11 +1428,37 @@
 
       
         
-          <p>闭包和this，是两个相当高频的考点，然而你有没有想过，实际上他们两个都跟同一个知识点相关？</p>
-<p>有请我们的这篇文章的主角，执行上下文</p>
-<h4 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h4><h5 id="执行上下文是什么"><a href="#执行上下文是什么" class="headerlink" title="执行上下文是什么"></a>执行上下文是什么</h5><p>可以简单理解执行上下文是js代码执行的环境，当js执行一段可执行代码时，会创建对应的执行上下文。他的组成如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">executionContextObj = &#123;</div><div class="line">	<span class="attr">this</span>: 对的就是你关注的那个<span class="keyword">this</span>,</div><div class="line">	VO：变量对象,</div><div class="line">    <span class="attr">scopeChain</span>: 作用域链,跟闭包相关</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>由于JS是单线程的，一次只能发生一件事情，其他事情会放在指定上下文栈中排队。js解释器在初始化执行代码时，会创建一个全局执行上下文到栈中，接着随着每次函数的调用都会创建并压入一个新的执行上下文栈。函数执行后，该执行上下文被弹出。<br>
+          <p>文章是两年前写的，执行上下文的部分出现了不小的变化，下面补上一些较新的知识</p>
+<p>执行上下文的过程</p>
+<ul>
+<li><p>全局上下文创建</p>
+<ul>
+<li>求this：浏览器中指向window</li>
+<li>创建全局的词法环境：let/const/函数</li>
+<li>创建全局变量环境，var</li>
+</ul>
+</li>
+<li><p>函数被调用，创建上下文，打入执行栈</p>
+<ul>
+<li>求this：指向调用者</li>
+<li>创建词法环境<ul>
+<li>记录变量/函数/参数</li>
+<li>创建外部环境引用，全局变量或是父级（函数声明的时候的父级）的词法环境</li>
+</ul>
+</li>
+<li>创建环境变量：var</li>
+</ul>
+</li>
+<li><p>函数执行</p>
+<ul>
+<li>运行代码，分配变量</li>
+</ul>
+</li>
+<li>离开函数<ul>
+<li>销毁上下文，出栈</li>
+</ul>
+</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/10126/#more" rel="contents">

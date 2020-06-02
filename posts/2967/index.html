@@ -97,16 +97,16 @@
 
 
 
-  <meta name="description" content="文章写于2018年，2020年做了一些更新 编写代码只是做好项目的一小部分，写代码难免会碰到错误。因此，在项目上线后，我们还需要主动对项目的错误进行收集，不能等用户发现错误，再联系我们，我们再去处理。这样很容易造成大的损失，提前做好错误收集和处理，可以减少损失。 本人并没有做过相关的工作，下面的文章只是我在学习中的一点思考和总结，可能有比较多不足和错误的地方，希望大家指正和指导。 本文章为前端进阶">
+  <meta name="description" content="错误信息监控收集哪些错误信息先从一个面试题开始吧。腾讯第二轮电话面试的一个题目：如果用户使用网页，发现白屏，现在联系上了你们，你们会向他询问什么信息呢？ 一个个去堆答案没有意思，我们换个思路，先想一下为什么会白屏？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端错误监控与收集探究">
+<meta property="og:title" content="前端监控探究">
 <meta property="og:url" content="http://hpoenixf.com/posts/2967/index.html">
 <meta property="og:site_name" content="hpoenixf&#39;s blog">
-<meta property="og:description" content="文章写于2018年，2020年做了一些更新 编写代码只是做好项目的一小部分，写代码难免会碰到错误。因此，在项目上线后，我们还需要主动对项目的错误进行收集，不能等用户发现错误，再联系我们，我们再去处理。这样很容易造成大的损失，提前做好错误收集和处理，可以减少损失。 本人并没有做过相关的工作，下面的文章只是我在学习中的一点思考和总结，可能有比较多不足和错误的地方，希望大家指正和指导。 本文章为前端进阶">
-<meta property="og:updated_time" content="2020-04-29T17:00:11.934Z">
+<meta property="og:description" content="错误信息监控收集哪些错误信息先从一个面试题开始吧。腾讯第二轮电话面试的一个题目：如果用户使用网页，发现白屏，现在联系上了你们，你们会向他询问什么信息呢？ 一个个去堆答案没有意思，我们换个思路，先想一下为什么会白屏？">
+<meta property="og:updated_time" content="2020-06-02T15:21:44.604Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端错误监控与收集探究">
-<meta name="twitter:description" content="文章写于2018年，2020年做了一些更新 编写代码只是做好项目的一小部分，写代码难免会碰到错误。因此，在项目上线后，我们还需要主动对项目的错误进行收集，不能等用户发现错误，再联系我们，我们再去处理。这样很容易造成大的损失，提前做好错误收集和处理，可以减少损失。 本人并没有做过相关的工作，下面的文章只是我在学习中的一点思考和总结，可能有比较多不足和错误的地方，希望大家指正和指导。 本文章为前端进阶">
+<meta name="twitter:title" content="前端监控探究">
+<meta name="twitter:description" content="错误信息监控收集哪些错误信息先从一个面试题开始吧。腾讯第二轮电话面试的一个题目：如果用户使用网页，发现白屏，现在联系上了你们，你们会向他询问什么信息呢？ 一个个去堆答案没有意思，我们换个思路，先想一下为什么会白屏？">
 
 
 
@@ -123,7 +123,7 @@
   };
 </script>
 
-  <title>前端错误监控与收集探究 | hpoenixf's blog</title>
+  <title>前端监控探究 | hpoenixf's blog</title>
   
 
 
@@ -319,7 +319,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">前端错误监控与收集探究</h2>
+          <h2 class="post-title" itemprop="name headline">前端监控探究</h2>
         
 
         <div class="post-meta">
@@ -331,7 +331,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T09:48:14+08:00">2020-04-30</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-02T11:28:14+08:00">2020-06-02</time>
             
 
             
@@ -358,7 +358,7 @@
 
           
           
-             <span id="/posts/2967/" class="leancloud_visitors" data-flag-title="前端错误监控与收集探究">
+             <span id="/posts/2967/" class="leancloud_visitors" data-flag-title="前端监控探究">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,7 +378,7 @@
       
         <span class="post-letters-count">
           &nbsp; | &nbsp;
-          <span>1,913 words </span>
+          <span>1,823 words </span>
         </span>
       
         </div>
@@ -394,11 +394,7 @@
       
 
       
-        <p>文章写于2018年，2020年做了一些更新</p>
-<p>编写代码只是做好项目的一小部分，写代码难免会碰到错误。因此，在项目上线后，我们还需要主动对项目的错误进行收集，不能等用户发现错误，再联系我们，我们再去处理。这样很容易造成大的损失，提前做好错误收集和处理，可以减少损失。</p>
-<p>本人并没有做过相关的工作，下面的文章只是我在学习中的一点思考和总结，可能有比较多不足和错误的地方，希望大家指正和指导。</p>
-<p>本文章为<a href="http://hpoenixf.com/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E7%B3%BB%E5%88%97-%E7%9B%AE%E5%BD%95.html">前端进阶系列</a>的一部分,<br>欢迎关注和<a href="https://github.com/hpoenixf/hpoenixf.github.io" target="_blank" rel="external">star</a>本博客或是关注我的<a href="https://github.com/hpoenixf" target="_blank" rel="external">github</a></p>
-<h4 id="收集哪些错误信息"><a href="#收集哪些错误信息" class="headerlink" title="收集哪些错误信息"></a>收集哪些错误信息</h4><p>先从一个面试题开始吧。腾讯第二轮电话面试的一个题目：如果用户使用网页，发现白屏，现在联系上了你们，你们会向他询问什么信息呢？</p>
+        <h2 id="错误信息监控"><a href="#错误信息监控" class="headerlink" title="错误信息监控"></a>错误信息监控</h2><h4 id="收集哪些错误信息"><a href="#收集哪些错误信息" class="headerlink" title="收集哪些错误信息"></a>收集哪些错误信息</h4><p>先从一个面试题开始吧。腾讯第二轮电话面试的一个题目：如果用户使用网页，发现白屏，现在联系上了你们，你们会向他询问什么信息呢？</p>
 <p>一个个去堆答案没有意思，我们换个思路，先想一下为什么会白屏？</p>
 <a id="more"></a>
 <h5 id="错误发生在什么环节"><a href="#错误发生在什么环节" class="headerlink" title="错误发生在什么环节"></a>错误发生在什么环节</h5><p>跟我之前的<a href="http://hpoenixf.com/web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89.html">性能优化的文章</a>一样，我们以用户访问页面的过程为顺序，大致排查一下</p>
@@ -470,6 +466,8 @@
 <li>白屏时间 ：responseStart - navigationStart</li>
 <li>domready 时间 ：domContentLoadedEventEnd - navigationStart</li>
 <li>onload 时间 ：loadEventEnd – navigationStart</li>
+<li>TTFB 首包时间 responseStart - Requeststart</li>
+<li>tti 可交互时间: domInteractive - fetchstart</li>
 </ol>
 <h6 id="performance-getEntries"><a href="#performance-getEntries" class="headerlink" title="performance getEntries"></a>performance getEntries</h6><p>具体参见<a href="https://www.w3.org/TR/resource-timing/" target="_blank" rel="external">W3C Resource timing</a>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Performance/getEntries" target="_blank" rel="external">Performance.getEntries()</a></p>
 <p>通过performance.getEntries()，可以得到一个数字，其中的每个元素分别代表着一个资源，元素对象包括的属性跟上面的performance timing有点接近，还有不同的属性包括name代表资源的地址，请求花费的时间duration。</p>
@@ -503,16 +501,34 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"unhandledrejection"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">  <span class="comment">// Event新增属性</span></div><div class="line">  <span class="comment">// @prop &#123;Promise&#125; promise - 状态为rejected的Promise实例</span></div><div class="line">  <span class="comment">// @prop &#123;String|Object&#125; reason - 异常信息或rejected的内容</span></div><div class="line"></div><div class="line">  <span class="comment">// 会阻止异常继续抛出，不让Uncaught(in promise) Error产生</span></div><div class="line">  e.preventDefault()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h6 id="try-catch"><a href="#try-catch" class="headerlink" title="try catch"></a>try catch</h6><p>无法捕捉到语法错误，只能捕捉运行时错误；<br>可以拿到出错的信息，堆栈，出错的文件、行号、列号； 需要借助工具把所有的function块以及文件块加入try,catch，可以在这个阶段打入更多的静态信息。</p>
 <p>要注意的是try catch只能捕获同步代码的异常，对回调，setTimeout，promise等无能为力</p>
-<h4 id="上报错误的方式"><a href="#上报错误的方式" class="headerlink" title="上报错误的方式"></a>上报错误的方式</h4><ol>
+<h6 id="API出错上报"><a href="#API出错上报" class="headerlink" title="API出错上报"></a>API出错上报</h6><p>获取请求，如果接口出错或是异常，报错</p>
+<h2 id="性能信息监控"><a href="#性能信息监控" class="headerlink" title="性能信息监控"></a>性能信息监控</h2><h4 id="performance-timing-1"><a href="#performance-timing-1" class="headerlink" title="performance.timing"></a>performance.timing</h4><h4 id="埋点sdk上报"><a href="#埋点sdk上报" class="headerlink" title="埋点sdk上报"></a>埋点sdk上报</h4><h4 id="监听onload，contentload事件"><a href="#监听onload，contentload事件" class="headerlink" title="监听onload，contentload事件"></a>监听onload，contentload事件</h4><h4 id="检测dom数量"><a href="#检测dom数量" class="headerlink" title="检测dom数量"></a>检测dom数量</h4><h4 id="检测最大面积的元素加载"><a href="#检测最大面积的元素加载" class="headerlink" title="检测最大面积的元素加载"></a>检测最大面积的元素加载</h4><h2 id="用户行为监控"><a href="#用户行为监控" class="headerlink" title="用户行为监控"></a>用户行为监控</h2><ul>
+<li>事件监听，滚动，点击等</li>
+<li>业务主动上报</li>
+<li>API请求</li>
+<li>用户对页面的操作</li>
+</ul>
+<h2 id="上报手段"><a href="#上报手段" class="headerlink" title="上报手段"></a>上报手段</h2><ol>
 <li><p>后端提供接口，前端ajax上传</p>
 </li>
 <li><p>创建一个新的图片，url参数带上错误信息</p>
 </li>
 </ol>
-<p>使用创建图片的好处是简单方便可跨域，可以防止重复请求，但要注意到地址栏可以携带的信息有限。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">report</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> reportUrl = <span class="string">'http://xxxx/report'</span>;</div><div class="line">  <span class="keyword">new</span> Image().src = reportUrl + <span class="string">'error='</span> + error;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>本文章为<a href="http://hpoenixf.com/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E7%B3%BB%E5%88%97-%E7%9B%AE%E5%BD%95.html">前端进阶系列</a>的一部分,<br>欢迎关注和<a href="https://github.com/hpoenixf/hpoenixf.github.io" target="_blank" rel="external">star</a>本博客或是关注我的<a href="https://github.com/hpoenixf" target="_blank" rel="external">github</a></p>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ol>
+<p>推荐使用gif,原因如下：</p>
+<ul>
+<li>简单方便可跨域</li>
+<li>可以防止重复请求</li>
+<li>服务器不用做响应</li>
+</ul>
+<ol>
+<li>navigator.sendBeacon</li>
+</ol>
+<p>能保证在退出页面前发送</p>
+<ol>
+<li>无埋点或是可视化埋点</li>
+</ol>
+<p>生成页面唯一标致，监听事件，用户行为等，dom节点上埋下坑位方便定位</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><p><a href="https://www.cnblogs.com/fsjohnhuang/p/7685144.html" target="_blank" rel="external">前端魔法堂——异常不仅仅是try/catch</a></p>
 </li>
 <li><p><a href="http://www.cnblogs.com/longm/p/7382163.html" target="_blank" rel="external">前端优化-如何计算白屏和首屏时间</a></p>
@@ -585,8 +601,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/11026/" rel="next" title="从负一步开始的性能优化">
-                <i class="fa fa-chevron-left"></i> 从负一步开始的性能优化
+              <a href="/posts/20802/" rel="next" title="前端系分文档">
+                <i class="fa fa-chevron-left"></i> 前端系分文档
               </a>
             
           </div>
@@ -595,8 +611,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/20802/" rel="prev" title="前端系分文档">
-                前端系分文档 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/25280/" rel="prev" title="前端进阶系列-目录">
+                前端进阶系列-目录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -761,7 +777,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#收集哪些错误信息"><span class="nav-number">1.</span> <span class="nav-text">收集哪些错误信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#错误发生在什么环节"><span class="nav-number">1.1.</span> <span class="nav-text">错误发生在什么环节</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#收集哪些信息"><span class="nav-number">1.2.</span> <span class="nav-text">收集哪些信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#怎么发现白屏"><span class="nav-number">1.3.</span> <span class="nav-text">怎么发现白屏</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何收集错误的信息"><span class="nav-number">2.</span> <span class="nav-text">如何收集错误的信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#各阶段访问耗时记录"><span class="nav-number">2.1.</span> <span class="nav-text">各阶段访问耗时记录</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#performance-timing"><span class="nav-number">2.1.1.</span> <span class="nav-text">performance timing</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#performance-getEntries"><span class="nav-number">2.1.2.</span> <span class="nav-text">performance getEntries</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#其他方法"><span class="nav-number">2.1.3.</span> <span class="nav-text">其他方法</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#脚本错误信息收集"><span class="nav-number">2.2.</span> <span class="nav-text">脚本错误信息收集</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#window-onerror"><span class="nav-number">2.2.1.</span> <span class="nav-text">window.onerror</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#promise的错误处理"><span class="nav-number">2.2.2.</span> <span class="nav-text">promise的错误处理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#try-catch"><span class="nav-number">2.2.3.</span> <span class="nav-text">try catch</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上报错误的方式"><span class="nav-number">3.</span> <span class="nav-text">上报错误的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误信息监控"><span class="nav-number">1.</span> <span class="nav-text">错误信息监控</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#收集哪些错误信息"><span class="nav-number">1.0.1.</span> <span class="nav-text">收集哪些错误信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#错误发生在什么环节"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">错误发生在什么环节</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#收集哪些信息"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">收集哪些信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#怎么发现白屏"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">怎么发现白屏</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何收集错误的信息"><span class="nav-number">1.0.2.</span> <span class="nav-text">如何收集错误的信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#各阶段访问耗时记录"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">各阶段访问耗时记录</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#performance-timing"><span class="nav-number">1.0.2.1.1.</span> <span class="nav-text">performance timing</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#performance-getEntries"><span class="nav-number">1.0.2.1.2.</span> <span class="nav-text">performance getEntries</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#其他方法"><span class="nav-number">1.0.2.1.3.</span> <span class="nav-text">其他方法</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#脚本错误信息收集"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">脚本错误信息收集</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#window-onerror"><span class="nav-number">1.0.2.2.1.</span> <span class="nav-text">window.onerror</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#promise的错误处理"><span class="nav-number">1.0.2.2.2.</span> <span class="nav-text">promise的错误处理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#try-catch"><span class="nav-number">1.0.2.2.3.</span> <span class="nav-text">try catch</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#API出错上报"><span class="nav-number">1.0.2.2.4.</span> <span class="nav-text">API出错上报</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能信息监控"><span class="nav-number">2.</span> <span class="nav-text">性能信息监控</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#performance-timing-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">performance.timing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#埋点sdk上报"><span class="nav-number">2.0.2.</span> <span class="nav-text">埋点sdk上报</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#监听onload，contentload事件"><span class="nav-number">2.0.3.</span> <span class="nav-text">监听onload，contentload事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检测dom数量"><span class="nav-number">2.0.4.</span> <span class="nav-text">检测dom数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检测最大面积的元素加载"><span class="nav-number">2.0.5.</span> <span class="nav-text">检测最大面积的元素加载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户行为监控"><span class="nav-number">3.</span> <span class="nav-text">用户行为监控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上报手段"><span class="nav-number">4.</span> <span class="nav-text">上报手段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
