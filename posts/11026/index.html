@@ -103,7 +103,7 @@
 <meta property="og:url" content="http://hpoenixf.com/posts/11026/index.html">
 <meta property="og:site_name" content="hpoenixf&#39;s blog">
 <meta property="og:description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化。 两年过去了，我又有了一点新的思考，在阿里也学习到了一些新的优化方法，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块： 页面访问前，页面加载中，页面运行时">
-<meta property="og:updated_time" content="2020-05-02T03:41:21.163Z">
+<meta property="og:updated_time" content="2020-06-09T15:43:31.111Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从负一步开始的性能优化">
 <meta name="twitter:description" content="两年前，我曾经写了一篇关于性能优化的文章, 在里面提出性能优化要先对页面性能进行记录，而且要按照页面访问的整个流程分步骤进行优化。 两年过去了，我又有了一点新的思考，在阿里也学习到了一些新的优化方法，在这里分享给大家。 关于性能优化的时机，其实可以更早，比用户输入url更早，即用户将要访问你的页面这一步开始优化。 因此，我们可以将性能优化按时间顺序分为三块： 页面访问前，页面加载中，页面运行时">
@@ -378,7 +378,7 @@
       
         <span class="post-letters-count">
           &nbsp; | &nbsp;
-          <span>814 words </span>
+          <span>853 words </span>
         </span>
       
         </div>
@@ -490,13 +490,12 @@
 <li>代码分割</li>
 </ul>
 </li>
-<li><p>获取渲染需要的接口：</p>
-<ul>
+<li>获取渲染需要的接口：<ul>
 <li>localstorage缓存时效性不强的数据</li>
+<li>在用户打开页面的过程中就获取接口（需要客户端配合改造，可以使用url带参数或是配置文件）</li>
 </ul>
 </li>
-<li><p>首屏内容：</p>
-<ul>
+<li>首屏内容：<ul>
 <li>placeholder</li>
 <li>关键css和dom</li>
 </ul>
@@ -697,7 +696,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
