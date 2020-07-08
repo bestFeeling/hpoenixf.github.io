@@ -103,7 +103,7 @@
 <meta property="og:url" content="http://hpoenixf.com/posts/37425/index.html">
 <meta property="og:site_name" content="hpoenixf&#39;s blog">
 <meta property="og:description" content="面向对象有三个特点，一个个来说 封装私有变量利用闭包实现对象的私有变量。 12345678910function Animal (age) &amp;#123;  this.getAge = function () &amp;#123;    return age  &amp;#125;&amp;#125;var dog = new Animal(3)console.log(dog.age) // undefinedconsol">
-<meta property="og:updated_time" content="2018-05-11T16:27:42.058Z">
+<meta property="og:updated_time" content="2020-07-08T15:50:35.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js面向对象探究">
 <meta name="twitter:description" content="面向对象有三个特点，一个个来说 封装私有变量利用闭包实现对象的私有变量。 12345678910function Animal (age) &amp;#123;  this.getAge = function () &amp;#123;    return age  &amp;#125;&amp;#125;var dog = new Animal(3)console.log(dog.age) // undefinedconsol">
@@ -378,7 +378,7 @@
       
         <span class="post-letters-count">
           &nbsp; | &nbsp;
-          <span>800 words </span>
+          <span>836 words </span>
         </span>
       
         </div>
@@ -424,6 +424,7 @@
 <p>检测继承是否成功的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">console.log(wangcai instanceof Animal)</div><div class="line">console.log(wangcai instanceof Dog)</div><div class="line">console.log(wangcai.constructor === Dog)</div><div class="line">console.log(wangcai.say2 === Animal.prototype.say2)</div><div class="line">console.log(wangcai.__proto__ === Dog.prototype)</div><div class="line">console.log(wangcai.__proto__.__proto__ === Animal.prototype)</div><div class="line">console.log(wangcai.__proto__.__proto__.__proto__ === Object.prototype)</div><div class="line">console.log(wangcai.constructor === Dog)</div></pre></td></tr></table></figure></p>
 <p>使用Object.create()和修复Dog.prototype.constructor = Dog是不是挺多余的？es6提供了这么一个函数<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf" target="_blank" rel="external">Object.setPrototypeOf</a><br>因此我们可以使用<br><code>Object.setPrototypeOf(Dog.prototype, Animal.prototype)</code><br>替换刚刚提到的两行代码</p>
 <p>可以了解到<code>Object.setPrototypeOf(A,B)</code>相当于令<code>A.__proto__ = B</code>。</p>
+<h5 id="个人用的实现继承的代码"><a href="#个人用的实现继承的代码" class="headerlink" title="个人用的实现继承的代码"></a>个人用的实现继承的代码</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">parent, fn</span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params">...selfArg</span>) </span>&#123;</div><div class="line">    parent.apply(<span class="keyword">this</span>, selfArg) </div><div class="line">    fn &amp;&amp; fn.apply(<span class="keyword">this</span>, selfArg )</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">Object</span>.setPrototypeOf(child.prototype, parent.prototype)</div><div class="line">  <span class="keyword">return</span> child</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><p>一个函数可以应用于不同的对象。并且根据this的不同，函数调用的结果也不同</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  alert([<span class="keyword">this</span>.a, <span class="keyword">this</span>.b]);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">test.call(&#123;<span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span>&#125;); <span class="comment">// 10, 20</span></div><div class="line">test.call(&#123;<span class="attr">a</span>: <span class="number">100</span>, <span class="attr">b</span>: <span class="number">200</span>&#125;); <span class="comment">// 100, 200</span></div><div class="line"> </div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</div><div class="line"> </div><div class="line">test(); <span class="comment">// 1, 2</span></div></pre></td></tr></table></figure>
 <p>或是在函数中检测arguments的数量和类型来实现多态</p>
@@ -582,7 +583,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -662,7 +663,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#封装"><span class="nav-number">1.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#私有变量"><span class="nav-number">1.1.</span> <span class="nav-text">私有变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#共有方法"><span class="nav-number">1.2.</span> <span class="nav-text">共有方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多态"><span class="nav-number">3.</span> <span class="nav-text">多态</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#封装"><span class="nav-number">1.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#私有变量"><span class="nav-number">1.1.</span> <span class="nav-text">私有变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#共有方法"><span class="nav-number">1.2.</span> <span class="nav-text">共有方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#个人用的实现继承的代码"><span class="nav-number">2.1.</span> <span class="nav-text">个人用的实现继承的代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多态"><span class="nav-number">3.</span> <span class="nav-text">多态</span></a></li></ol></div>
             
 
           </div>
